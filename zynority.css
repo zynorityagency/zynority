@@ -8,10 +8,16 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 /* Header */
@@ -494,15 +500,15 @@ footer {
   max-width: 600px; /* Set a maximum width */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional: Add rounded corners */
-  margin: 20px auto; 
-  display: block; 
+  margin: 20px auto; /* Center the image and add some margin */
+  display: block; /* Ensure the image is treated as a block element */
 }
 
 /* Hover Effect for Team Photo */
 .team-photo:hover {
-  transform: scale(1.05); 
-  transition: transform 0.3s ease; 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
 }
 
 /* Scroll Animations */
@@ -572,7 +578,7 @@ body {
 }
 
 .accordion-item input[type="checkbox"] {
-  display: none; 
+  display: none; /* Hide the checkbox */
 }
 
 .accordion-button {
@@ -614,7 +620,7 @@ body {
 }
 
 .accordion-item input[type="checkbox"]:checked ~ .panel {
-  max-height: 200px;
+  max-height: 200px; /* Adjust based on content */
   padding: 15px;
 }
 
@@ -637,7 +643,7 @@ body {
 /* White Background for All Sections */
 section {
   background-color: white;
-  padding: 80px 0; 
+  padding: 80px 0; /* Add padding for spacing */
 }
 /* FAQ Section */
 .faq {
@@ -663,7 +669,7 @@ section {
 }
 
 .accordion-item input[type="checkbox"] {
-  display: none; 
+  display: none; /* Hide the checkbox */
 }
 
 .accordion-button {
@@ -705,11 +711,11 @@ section {
 }
 /* Agency Name Styling */
 .agency-name {
-  font-size: 1.5rem; 
-  font-weight: 600; 
-  color: white; 
-  margin-left: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem; /* Adjust the font size */
+  font-weight: 600; /* Make the text bold */
+  color: white; /* Set the text color to white */
+  margin-left: 10px; /* Reduce space between logo and name */
+  font-family: 'Poppins', sans-serif; /* Use the same font as the rest of the website */
 }
 
 /* Portfolio Button Styling */
@@ -721,8 +727,8 @@ section {
   border-radius: 5px;
   font-weight: 600;
   transition: background-color 0.3s ease;
-  display: inline-block;
-  margin-top: 20px; 
+  display: inline-block; /* Ensure it behaves like a button */
+  margin-top: 20px; /* Add some space above the button */
 }
 
 .portfolio-button:hover {
