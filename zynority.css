@@ -494,15 +494,15 @@ footer {
   max-width: 600px; /* Set a maximum width */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional: Add rounded corners */
-  margin: 20px auto; /* Center the image and add some margin */
-  display: block; /* Ensure the image is treated as a block element */
+  margin: 20px auto; 
+  display: block; 
 }
 
 /* Hover Effect for Team Photo */
 .team-photo:hover {
-  transform: scale(1.05); /* Slightly enlarge the image on hover */
-  transition: transform 0.3s ease; /* Smooth transition */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+  transform: scale(1.05); 
+  transition: transform 0.3s ease; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 /* Scroll Animations */
@@ -572,7 +572,7 @@ body {
 }
 
 .accordion-item input[type="checkbox"] {
-  display: none; /* Hide the checkbox */
+  display: none; 
 }
 
 .accordion-button {
@@ -614,7 +614,7 @@ body {
 }
 
 .accordion-item input[type="checkbox"]:checked ~ .panel {
-  max-height: 200px; /* Adjust based on content */
+  max-height: 200px;
   padding: 15px;
 }
 
@@ -637,7 +637,7 @@ body {
 /* White Background for All Sections */
 section {
   background-color: white;
-  padding: 80px 0; /* Add padding for spacing */
+  padding: 80px 0; 
 }
 /* FAQ Section */
 .faq {
@@ -663,7 +663,7 @@ section {
 }
 
 .accordion-item input[type="checkbox"] {
-  display: none; /* Hide the checkbox */
+  display: none; 
 }
 
 .accordion-button {
@@ -705,11 +705,11 @@ section {
 }
 /* Agency Name Styling */
 .agency-name {
-  font-size: 1.5rem; /* Adjust the font size */
-  font-weight: 600; /* Make the text bold */
-  color: white; /* Set the text color to white */
-  margin-left: 10px; /* Reduce space between logo and name */
-  font-family: 'Poppins', sans-serif; /* Use the same font as the rest of the website */
+  font-size: 1.5rem; 
+  font-weight: 600; 
+  color: white; 
+  margin-left: 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Portfolio Button Styling */
@@ -721,8 +721,8 @@ section {
   border-radius: 5px;
   font-weight: 600;
   transition: background-color 0.3s ease;
-  display: inline-block; /* Ensure it behaves like a button */
-  margin-top: 20px; /* Add some space above the button */
+  display: inline-block;
+  margin-top: 20px; 
 }
 
 .portfolio-button:hover {
@@ -782,5 +782,62 @@ section {
   .video-showcase video,
   .video-showcase iframe {
       height: 300px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .services .service-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .portfolio-showcase {
+    flex-direction: column;
+  }
+
+  .video-editor {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .team-members {
+    grid-template-columns: 1fr;
   }
 }
