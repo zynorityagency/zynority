@@ -57,3 +57,25 @@ document.addEventListener("DOMContentLoaded", function () {
   
   window.addEventListener("scroll", checkScroll);
   window.addEventListener("load", checkScroll);
+
+  function sendEmail(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('contactForm');
+    const formData = new FormData(form);
+
+    emailjs.send("service_qd4omgd", "template_dzhlirb", {
+        from_name: formData.get('name'),
+        reply_to: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+    }).then(
+        function(response) {
+            alert("Message sent successfully!");
+            form.reset();
+        },
+        function(error) {
+            alert("Failed to send message. Please try again.");
+        }
+    );
+  }
