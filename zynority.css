@@ -1,0 +1,786 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 20px 0;
+  transition: background 0.3s ease; /* Smooth transition for background */
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Distribute space evenly */
+}
+
+header .logo {
+  height: 80px; /* Increased logo size */
+  width: 80px; /* Make the logo square */
+  border-radius: 50%;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for logo */
+  margin-right: 10px; /* Add some space between logo and agency name */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Add a subtle border */
+  background-color: white; /* Restore the white background */
+  display: flex; /* Use flexbox to center the name */
+  align-items: center; /* Vertically center the name */
+  justify-content: center; /* Horizontally center the name */
+  position: relative; /* Position the name */
+  overflow: hidden; /* Clip the content */
+}
+
+header .logo img {
+  width: 100%; /* Make the image fit the circle */
+  height: 100%; /* Make the image fit the circle */
+  object-fit: contain; /* Ensure the image fits within the circle */
+  filter: grayscale(0%) brightness(100%) contrast(100%); /* Reset image filters */
+}
+
+header .logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Agency Name Styling */
+.agency-name {
+  margin-left: 10px; /* Reduce space between logo and name */
+  font-family: 'Poppins', sans-serif; /* Use the same font as the rest of the website */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for hero section */
+  background-attachment: fixed; /* Create parallax effect */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: fadeInUp 1s ease forwards; /* Apply animation */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  transition: color 0.3s ease; /* Smooth transition for paragraph color */
+}
+
+.hero .btn {
+  background: white;
+  color: #6a11cb;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for button */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.hero .btn:hover::after {
+  transform: translate(-50%, -50%) scale(1); /* Expand the glow */
+}
+
+.hero .btn:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Add glow */
+  background-color: #ddd;
+  color: #333;
+}
+
+/* Services Section */
+.services {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for card */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  transition: color 0.3s ease; /* Smooth transition for paragraph color */
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.portfolio-showcase {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-editor {
+  width: 48%;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* About Section */
+.about {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.about img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-item button {
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  background: #f9f9f9;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem; /* Ensure all questions have the same font size */
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.accordion-item button:hover {
+  background: #e0e0e0;
+}
+
+.accordion-item .panel {
+  padding: 0 15px;
+  background: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item .panel p {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.accordion-item .panel a {
+  color: #6a11cb;
+  text-decoration: none;
+}
+
+.accordion-item .panel a:hover {
+  text-decoration: underline;
+}
+
+/* Highlight Links in Answers */
+.highlight {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.highlight:hover {
+  text-decoration: underline;
+}
+
+/* Panel Styling */
+.accordion-item .panel p {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.accordion-item .panel strong {
+  color: #6a11cb;
+}
+
+/* Contact Section */
+.contact {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease; /* Smooth transition for input fields */
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  border-color: #bbb;
+}
+
+.contact form button {
+  background: #6a11cb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for button */
+}
+
+.contact form button:hover {
+  background-color: #440a67;
+}
+
+.contact-details {
+  margin-top: 40px;
+}
+
+.contact-details a {
+  color: #6a11cb;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+.contact-details a:hover {
+  color: #440a67;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for footer */
+}
+
+/* Video Showcase */
+.video-showcase {
+  margin-bottom: 40px;
+}
+
+.video-showcase video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.video-showcase p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Large Video for Alg_Youcef12 */
+.large-video {
+  width: 100%;
+  max-width: 1080px; /* Match the video's width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  margin: 0 auto; /* Center the video */
+  display: block;
+}
+
+/* Team Section */
+.team {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f4f4f9; /* Light background for the team section */
+}
+
+.team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.team > .container > .team-member {
+  width: 250px;
+  margin: 2rem auto; /* Center the card and add vertical spacing */
+}
+
+.team-member {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px; /* Adjust width as needed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px); /* Lift the team member card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular profile photos */
+  margin-bottom: 20px;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Team Photo */
+.team-photo {
+  width: 100%; /* Make the image responsive */
+  max-width: 600px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  margin: 20px auto; /* Center the image and add some margin */
+  display: block; /* Ensure the image is treated as a block element */
+}
+
+/* Hover Effect for Team Photo */
+.team-photo:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Animations */
+.animate-on-scroll:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.animate-on-scroll:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.animate-on-scroll:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Background Gradient Animation */
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* FAQ Section */
+.faq {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-item input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+.accordion-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  background: #f9f9f9;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.accordion-button:hover {
+  background: #e0e0e0;
+}
+
+.accordion-button::after {
+  content: "+";
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item input[type="checkbox"]:checked + .accordion-button::after {
+  content: "-";
+  transform: rotate(0deg);
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  background: white;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item input[type="checkbox"]:checked ~ .panel {
+  max-height: 200px; /* Adjust based on content */
+  padding: 15px;
+}
+
+.panel p {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.panel a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.panel a:hover {
+  text-decoration: underline;
+}
+/* White Background for All Sections */
+section {
+  background-color: white;
+  padding: 80px 0; /* Add padding for spacing */
+}
+/* FAQ Section */
+.faq {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-item input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+.accordion-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  background: #f9f9f9;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.accordion-button:hover {
+  background: #e0e0e0;
+}
+
+.accordion-button::after {
+  content: "+";
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item input[type="checkbox"]:checked + .accordion-button::after {
+  content: "-";
+  transform: rotate(0deg);
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  background: white;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+/* Agency Name Styling */
+.agency-name {
+  font-size: 1.5rem; /* Adjust the font size */
+  font-weight: 600; /* Make the text bold */
+  color: white; /* Set the text color to white */
+  margin-left: 10px; /* Reduce space between logo and name */
+  font-family: 'Poppins', sans-serif; /* Use the same font as the rest of the website */
+}
+
+/* Portfolio Button Styling */
+.portfolio-button {
+  background: #6a11cb;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Ensure it behaves like a button */
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.portfolio-button:hover {
+  background-color: #440a67;
+}
+
+/* Video Description Styling */
+.video-description {
+  font-style: italic;
+  color: #555;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+.video-showcase {
+  margin: 2rem 0;
+  background: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.video-showcase video,
+.video-showcase iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.video-description {
+  text-align: center;
+  margin-top: 1rem;
+  color: #333;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.portfolio-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-showcase video,
+  .video-showcase iframe {
+      height: 300px;
+  }
+}
